@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research Library | SSB PRO Consulting</title>
-<meta name="description" content="The SSB PRO research library publishes governance frameworks and tooling specifications in dated, tagged, licensed waves.">
+<title>SSB AI.EDU | SSB PRO Consulting</title>
+<meta name="description" content="SSB AI.EDU is the learning hub of SSB PRO Consulting: articles, courses, and research on reviewing AI work, published in dated, tagged, licensed waves.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Libre+Franklin:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
@@ -20,67 +20,63 @@
     </a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="research.html">Research Library</a>
+      <a href="research.html">SSBAI.EDU</a>
       <a href="origins.html">Origins</a>
       <a href="licensing.html">Licensing &amp; Support</a>
       <a href="about.html">About</a>
     </nav>
-    <span class="badge">v0.2.2</span>
+    <span class="badge">v0.3.0</span>
   </div>
 </header>
 <!-- /chrome:nav -->
 
 <section class="hero">
   <div class="wrap">
-    <p class="label">Research Library</p>
+    <p class="label">SSB AI.EDU</p>
     <hr class="rule">
-    <h1>Published in dated waves.</h1>
-    <p class="lede">The library is released in waves. Each wave is tagged, dated, and carries its own
-       license designation. Until a wave states otherwise, all rights are reserved.</p>
+    <h1>The learning hub, published in dated waves.</h1>
+    <p class="lede">Articles, courses, and research on reviewing AI work with professional judgment.
+       Each wave is tagged, dated, and carries its own license designation. Until a wave states
+       otherwise, all rights are reserved.</p>
+    <div class="profile-chip" id="profileChip">
+      <span class="avatar" id="chipAvatar">?</span>
+      <strong id="chipName"></strong>
+      <span class="score" id="chipScore"></span>
+    </div>
+    <div class="tabs" role="navigation" aria-label="SSB AI.EDU sections">
+      <a href="#library" data-route="library" class="active">Library</a>
+      <a href="#profile" data-route="profile">Learner profile</a>
+      <a href="#referrals" data-route="referrals">Referrals</a>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="tab-page active" id="library" data-page="library">
   <div class="wrap">
-    <p class="label">What to expect</p>
-    <h2>Three waves, in order</h2>
+    <p class="label">Library</p>
+    <h2>What is here, and what is on the way</h2>
+    <p class="filter-label">Filter by type</p>
+    <div class="chip-row" id="typeFilters"></div>
+    <p class="filter-label">Filter by author</p>
+    <div class="chip-row" id="authorFilters"></div>
+    <p class="hint" id="libCount"></p>
+    <div class="lib-grid" id="libGrid"></div>
+    <noscript><p class="note-box">The library browser needs JavaScript. Without it, the waves table below lists what is in preparation.</p></noscript>
+    <div class="note-box" id="libEmpty" style="display:none"><p>Nothing matches those filters yet. The news desk opens with Wave 1.</p></div>
+    <div class="note-box">
+      <p><strong>The news desk opens with Wave 1.</strong> News, developing stories, and research stamps
+         will appear here once there is something dated and checked to report. Nothing is posted until then.</p>
+    </div>
+
+    <h2 style="margin-top:48px">Three waves, in order</h2>
     <table>
       <tr><th>Phase</th><th>Content</th><th>Status</th></tr>
       <tr><td>Wave 1</td><td>Core governance frameworks and methodology papers</td><td>In preparation</td></tr>
       <tr><td>Wave 2</td><td>Validation and change-control tooling specifications</td><td>Planned</td></tr>
       <tr><td>Wave 3</td><td>Reference implementations and worked examples</td><td>Planned</td></tr>
     </table>
-  </div>
-</section>
 
-<section class="alt">
-  <div class="wrap">
-    <p class="label">Wave 1 preview</p>
-    <h2>Three topics in preparation</h2>
-    <div class="cols">
-      <div class="card">
-        <h3>Governance frameworks</h3>
-        <p>Governance frameworks for AI-assisted professional work: named roles, written rules, and
-           evidence standards for what an agent claims. Arriving in Wave 1.</p>
-      </div>
-      <div class="card">
-        <h3>Validation and promotion</h3>
-        <p>Validation and promotion pipelines for tooling: how a tool is proven before it is
-           trusted with real work. Arriving in Wave 1.</p>
-      </div>
-      <div class="card">
-        <h3>Change control</h3>
-        <p>Change control for live artifacts: how a document or system in use is changed without
-           losing its history. Arriving in Wave 1.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="tint">
-  <div class="wrap">
-    <p class="label">Education track</p>
-    <h2>SSB AI.EDU, arriving as Track 6</h2>
+    <h2 style="margin-top:48px">Inside Track 6</h2>
     <p>Alongside the frameworks and tooling, we are building course and textbook content under the
        SSB AI.EDU name. Development has been under way since March 2026.</p>
     <div class="cols">
@@ -99,6 +95,75 @@
   </div>
 </section>
 
+<section class="tab-page" id="profile" data-page="profile">
+  <div class="wrap">
+    <p class="label">Learner profile</p>
+    <h2>Keep track of what you have explored</h2>
+    <div class="two">
+      <div class="panel">
+        <div id="signupView">
+          <p>Create a profile with a display name. An email is optional.</p>
+          <form id="profileForm" novalidate>
+            <label class="field"><span>Display name</span><input id="pfName" type="text" maxlength="40" autocomplete="nickname"></label>
+            <label class="field"><span>Email (optional)</span><input id="pfEmail" type="email" autocomplete="email"></label>
+            <p class="warn" id="pfError" role="alert"></p>
+            <button class="btn solid" type="submit">Create my profile</button>
+          </form>
+        </div>
+        <div id="profileView" style="display:none">
+          <p class="label">Your profile</p>
+          <h3 id="pvName"></h3>
+          <p class="hint" id="pvEmail"></p>
+          <p>Engagement score: <strong id="pvScore">0</strong></p>
+          <button class="btn small" type="button" id="removeProfile">Remove my profile from this browser</button>
+        </div>
+        <p class="warn" id="storageNote" style="display:none">This browser is not letting the page save data, so your profile will last only until this page is closed.</p>
+        <p class="hint">Your profile lives in this browser for now; accounts arrive with the platform.</p>
+      </div>
+      <aside class="panel">
+        <p class="label">How the score works</p>
+        <div class="metric-list">
+          <div><strong>+5</strong><span>each time you open a library card</span></div>
+          <div><strong>+1</strong><span>each time you use a filter</span></div>
+        </div>
+        <p class="hint">The score is a simple count of your own activity on this page. It is not a credential or a grade.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="tab-page" id="referrals" data-page="referrals">
+  <div class="wrap">
+    <p class="label">Referrals</p>
+    <h2>Invite colleagues into safer AI practice</h2>
+    <div class="two">
+      <div class="panel">
+        <div id="refNeedProfile">
+          <p>Your referral code is created with your learner profile.</p>
+          <a href="#profile" data-route="profile">Create a profile first</a>
+        </div>
+        <div id="refView" style="display:none">
+          <p>Share this code with a colleague. Referral tracking will connect to the platform once accounts arrive.</p>
+          <div class="referral-box">
+            <div><span>Your referral code</span><strong id="refCode">SSB-XXXX-0000</strong></div>
+            <div class="actions">
+              <button class="btn small" type="button" id="copyCode">Copy code</button>
+              <button class="btn small" type="button" id="regenCode">Regenerate</button>
+            </div>
+          </div>
+          <p class="hint" id="copyStatus" role="status"></p>
+          <p class="hint">Times you have copied this code: <strong id="refCopies">0</strong></p>
+        </div>
+      </div>
+      <aside class="panel">
+        <p class="label">Rewards, arriving</p>
+        <p>Rewards are arriving with the platform: solvable tasks, prompts, and agentic workflows as prizes.</p>
+        <p class="hint">Nothing is awarded yet, and no invite counts are tracked beyond your own copies of the code.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <!-- chrome:footer -->
 <footer class="footer">
   <div class="wrap">
@@ -109,10 +174,11 @@
     <p class="fine">Educational content only. Nothing on this site is legal, tax, audit, assurance, or
        regulatory advice, and nothing here creates a client relationship. &copy; 2026 SSB PRO Consulting,
        PLLC. Brought to you by SSAI. All rights reserved unless a published wave states its own license.
-       Version v0.2.2.</p>
+       Version v0.3.0.</p>
   </div>
 </footer>
 <!-- /chrome:footer -->
 
+<script src="assets/edu.js"></script>
 </body>
 </html>
