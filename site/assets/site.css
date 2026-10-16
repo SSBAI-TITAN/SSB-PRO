@@ -49,8 +49,8 @@ code, .stamp { font-family: var(--mono); font-size: 0.86em; color: var(--navy-in
 }
 .rule { border: 0; border-top: 3px solid var(--orange); width: 56px; margin: 0 0 28px; }
 
-/* Nav: light, type-led; navy lives in the ink, not the bar */
-.nav { background: var(--white); border-bottom: 1px solid var(--navy-tint); }
+/* Nav: contrasting warm band over the white hero; navy as ink, orange as the rule */
+.nav { background: var(--cream); border-bottom: 3px solid var(--orange); }
 .nav .wrap { display: flex; align-items: center; gap: 28px; min-height: 68px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
 .brand { display: flex; align-items: center; gap: 12px; border: 0; }
 .brand .tile {
@@ -79,6 +79,14 @@ section.alt { background: var(--white); border-top: 1px solid var(--navy-tint); 
 section.alt .card { background: var(--cream); }
 .card h3 { margin-top: 0; }
 .card p { font-size: 0.97rem; color: var(--navy-ink); }
+
+/* Rhythm additions (round 2): a cooler band and quiet list styling, palette variables only */
+section.tint { background: var(--navy-tint); border-top: 1px solid var(--gray); border-bottom: 1px solid var(--gray); }
+section.tint .card { background: var(--white); }
+.card ul { margin: 0 0 1em; padding-left: 1.1em; font-size: 0.95rem; color: var(--navy-ink); }
+.card li { margin-bottom: 0.35em; }
+.card .kicker { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin: 0 0 10px; }
+.card.accent { border-top-color: var(--orange); }
 
 /* CTA: one per surface, orange owns it */
 .cta {
