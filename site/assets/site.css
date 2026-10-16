@@ -18,7 +18,7 @@
   --sans: "Inter", system-ui, sans-serif;
   --wordmark: "Libre Franklin", system-ui, sans-serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
-  --measure: 68ch;
+  --measure: 82ch;
 }
 
 * { box-sizing: border-box; }
@@ -42,39 +42,39 @@ a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--te
 a:hover { border-bottom-color: var(--teal); }
 code, .stamp { font-family: var(--mono); font-size: 0.86em; color: var(--navy-ink); }
 
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
 .label {
   font-family: var(--sans); font-weight: 600; font-size: 0.74rem;
   text-transform: uppercase; letter-spacing: 0.18em; color: var(--teal); margin: 0 0 14px;
 }
 .rule { border: 0; border-top: 3px solid var(--orange); width: 56px; margin: 0 0 28px; }
 
-/* Nav */
-.nav { background: var(--navy); color: var(--white); }
-.nav .wrap { display: flex; align-items: center; gap: 28px; min-height: 64px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+/* Nav: light, type-led; navy lives in the ink, not the bar */
+.nav { background: var(--white); border-bottom: 1px solid var(--navy-tint); }
+.nav .wrap { display: flex; align-items: center; gap: 28px; min-height: 68px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
 .brand { display: flex; align-items: center; gap: 12px; border: 0; }
 .brand .tile {
-  background: var(--white); color: var(--navy); font-family: var(--wordmark); font-weight: 800;
+  background: var(--navy); color: var(--white); font-family: var(--wordmark); font-weight: 800;
   padding: 5px 9px; letter-spacing: 0.04em; font-size: 0.95rem;
 }
-.brand .word { font-family: var(--wordmark); font-weight: 700; letter-spacing: 0.08em; color: var(--white); font-size: 0.95rem; }
-.nav nav { display: flex; gap: 22px; margin-left: auto; flex-wrap: wrap; }
-.nav nav a { color: var(--cream); border: 0; font-size: 0.92rem; font-weight: 500; }
-.nav nav a:hover, .nav nav a[aria-current="page"] { color: var(--white); border-bottom: 2px solid var(--orange); }
+.brand .word { font-family: var(--wordmark); font-weight: 700; letter-spacing: 0.08em; color: var(--navy); font-size: 0.95rem; }
+.nav nav { display: flex; gap: 24px; margin-left: auto; flex-wrap: wrap; }
+.nav nav a { color: var(--navy-ink); border: 0; font-size: 0.92rem; font-weight: 500; padding-bottom: 2px; }
+.nav nav a:hover, .nav nav a[aria-current="page"] { color: var(--navy); border-bottom: 2px solid var(--orange); }
 .badge {
   font-family: var(--mono); font-size: 0.72rem; color: var(--navy);
   background: var(--cream); padding: 2px 8px; border: 1px solid var(--gray);
 }
 
 /* Hero */
-.hero { padding: 96px 0 72px; background: var(--white); border-bottom: 1px solid var(--navy-tint); }
-.hero .lede { font-size: 1.18rem; color: var(--navy-ink); max-width: 56ch; }
-.hero .quote { font-family: var(--serif); font-style: italic; color: var(--gray-dark); margin-top: 28px; max-width: 56ch; }
+.hero { padding: 88px 0 64px; background: var(--white); border-bottom: 1px solid var(--navy-tint); }
+.hero .lede { font-size: 1.22rem; color: var(--navy-ink); max-width: 72ch; }
+.hero .quote { font-family: var(--serif); font-style: italic; color: var(--gray-dark); margin-top: 28px; max-width: 72ch; }
 
 /* Sections */
-section { padding: 72px 0; }
+section { padding: 64px 0; }
 section.alt { background: var(--white); border-top: 1px solid var(--navy-tint); border-bottom: 1px solid var(--navy-tint); }
-.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 36px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; margin-top: 36px; }
 .card { background: var(--white); border: 1px solid var(--navy-tint); border-top: 3px solid var(--teal); padding: 28px; }
 section.alt .card { background: var(--cream); }
 .card h3 { margin-top: 0; }
@@ -93,12 +93,12 @@ th { font-family: var(--sans); text-align: left; font-weight: 600; font-size: 0.
 td { padding: 12px 16px; border-bottom: 1px solid var(--navy-tint); vertical-align: top; }
 tr:nth-child(even) td { background: var(--cream); }
 
-/* Provenance strip */
-.prov { background: var(--navy); color: var(--cream); }
-.prov h2 { color: var(--white); }
-.prov p { color: var(--cream); }
-.prov a { color: var(--teal-tint); border-bottom-color: var(--teal); }
-.prov .stamp { color: var(--orange-tint); }
+/* Provenance strip: warm field, orange signature rule; navy is ink only */
+.prov { background: var(--orange-tint); border-top: 3px solid var(--orange); }
+.prov h2 { color: var(--navy); }
+.prov p { color: var(--navy-ink); }
+.prov a { color: var(--teal); border-bottom-color: var(--teal); }
+.prov .stamp { color: var(--navy); }
 
 /* Footer */
 .footer { background: var(--navy-ink); color: var(--cream); padding: 56px 0 40px; font-size: 0.92rem; }
